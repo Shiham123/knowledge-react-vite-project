@@ -1,7 +1,11 @@
+import BlogsPage from './assets/components/blogs';
+import Header from './assets/components/header';
+
 function App() {
   return (
     <>
-      <h1>img height </h1>
+      <Header />
+      <BlogsPage />
     </>
   );
 }
