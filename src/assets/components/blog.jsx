@@ -1,7 +1,7 @@
 import { FaBookmark } from 'react-icons/fa';
 
 const BlogPage = (props) => {
-  const { blog, handleAddBookmark } = props;
+  const { blog, handleAddBookmark, handleMarkAsRead } = props;
 
   const {
     id,
@@ -45,7 +45,12 @@ const BlogPage = (props) => {
           </span>;
         })}
       </p>
-      <button className="text-purple-800 font-bold underline">
+      <button
+        className="text-purple-800 font-bold underline"
+        onClick={() => {
+          handleMarkAsRead(id, reading_time);
+        }}
+      >
         Mark as Read
       </button>
     </div>
