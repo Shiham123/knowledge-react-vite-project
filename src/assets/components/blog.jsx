@@ -1,7 +1,8 @@
 import { FaBookmark } from 'react-icons/fa';
 
 const BlogPage = (props) => {
-  const { blog } = props;
+  const { blog, handleAddBookmark } = props;
+
   const {
     id,
     cover,
@@ -12,6 +13,7 @@ const BlogPage = (props) => {
     reading_time,
     hashtags,
   } = blog;
+
   return (
     <div className="mb-20 space-y-4">
       <img className="w-full mb-8" src={cover} alt={title} />
@@ -25,7 +27,12 @@ const BlogPage = (props) => {
         </div>
         <div>
           <span>{reading_time} Min Read</span>
-          <button>
+          <button
+            className="ml-2 text-2xl text-red-600"
+            onClick={() => {
+              handleAddBookmark(blog);
+            }}
+          >
             <FaBookmark />
           </button>
         </div>
